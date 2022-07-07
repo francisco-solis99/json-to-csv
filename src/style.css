@@ -1,6 +1,8 @@
 :root {
-  --color-primary: #152f4d;
-  --color-secondary: #F4E158;
+  --color-primary: #72F087;
+  --color-secondary: #FFF886;
+  --color-secondary-pink: #F072B6;
+  --color-secondary-dark: #202632;
 }
 
 * {
@@ -9,7 +11,16 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Maven Pro';
+  src: url('./assets/fonts/MavenPro.woff2') format('woff2'),
+       url('./assets/fonts/MavenPro.woff') format('woff')
+       url('./assets/fonts/MavenPro.ttf') format('truetype');
+  font-display: swap;
+}
+
 body {
+  font-family: 'Maven Pro', sans-serif;
   background-color: var(--color-primary);
 }
 
