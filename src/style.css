@@ -132,3 +132,62 @@ body {
 .content {
   margin-top: 50px;
 }
+
+
+
+/* media queryes */
+
+@media screen and (min-width:968px) {
+  .header {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .nav {
+    justify-content: space-between;
+    margin: 25px 0;
+    padding: 8px 0;
+  }
+
+  .menu__button {
+    display: none;
+  }
+
+  .menu__logo {
+    width: auto;
+  }
+
+  .menu__list {
+    opacity: 1;
+    display: initial;
+    position: initial;
+    background-color: initial;
+  }
+
+  .menu__list .menu__item {
+    display:inline-block;
+    min-width: 120px;
+    padding: 10px 0;
+    text-align: center;
+    border-right: none;
+    line-height: 10px;
+  }
+
+  .menu__item > a {
+    padding: 10px;
+    text-decoration: none;
+    text-transform: initial;
+    font-size: 1.8rem;
+    color: var(--color-secondary-dark);
+  }
+
+  .menu__item:hover > a {
+    color: var(--color-secondary);
+    animation: none
+  }
+
+  .menu__item:hover {
+    background-color: initial;
+    border: 2px solid var(--color-secondary-dark);
+  }
+}
