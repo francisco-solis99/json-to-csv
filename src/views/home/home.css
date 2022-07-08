@@ -168,6 +168,8 @@
   font-size: 2rem;
 }
 
+/* Footer */
+
 .footer__wrapper {
   display: grid;
   place-content: center;
@@ -231,15 +233,16 @@
   }
 
   .features__principal-title {
-    font-size: 3.2rem;
+    font-size: 3.6rem;
   }
 
   .features__copy {
     margin-top: 20px;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 
   .features__list {
+    max-width: 1200px;
     margin-top: 80px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -258,4 +261,33 @@
     font-size: 1.6rem;
     line-height: 2rem;
   }
+
+/* styles for the final cta*/
+.final-cta__wrapper {
+  width: 90%;
+  height: 350px;
+  margin: 0 auto;
+}
+
+.final-cta {
+  font-size: 3.2rem;
+}
+
+.final-cta__wrapper > .cta {
+  align-self: center;
+}
+
+/*Styles for the Footer */
+
+.footer__wrapper {
+  display: grid;
+  place-content: center;
+  height: 60px;
+  background-color: #fff;
+}
+
+.footer__text {
+  font-size: 1.4rem;
+}
+
 }
