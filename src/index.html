@@ -13,15 +13,24 @@
     <div id="app">
       <header class="header">
         <nav class="nav">
-          <a href="#">
-            <img src="" alt="Logo of App">
-          </a>
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="#">By typing</a>
+          <div class="menu__button">
+            <figure class="menu__image-wrapper">
+              <img  class="menu__image" src="./assets/icons/menu.svg" alt="Menu icon">
+            </figure>
+          </div>
+          <div class="menu__logo">
+            <a href="/" class="menu__link">
+              <figure class="menu__logo-wrapper">
+                <img class="menu__logo-image" src="./assets/images/logo.svg" alt="Logo of App">
+              </figure>
+            </a>
+          </div>
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="/generate">Generate</a>
             </li>
-            <li class="nav__item">
-              <a href="#">By File</a>
+            <li class="menu__item">
+              <a href="/drag-drop">By File</a>
             </li>
           </ul>
         </nav>
