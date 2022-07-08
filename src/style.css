@@ -137,7 +137,7 @@ body {
 
 /* media queryes */
 
-@media screen and (min-width:968px) {
+@media screen and (min-width:768px) {
   .header {
     width: 90%;
     margin: 0 auto;
@@ -174,10 +174,8 @@ body {
   }
 
   .menu__item > a {
-    padding: 10px;
     text-decoration: none;
     text-transform: initial;
-    font-size: 1.8rem;
     color: var(--color-secondary-dark);
   }
 

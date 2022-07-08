@@ -174,3 +174,88 @@
   height: 40px;
   background-color: #fff;
 }
+
+
+/* media queries */
+
+@media screen and (min-width:948px) {
+  /* styles fo the hero section */
+  .hero__wrapper {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 120px 0;
+  }
+
+  .hero__cta, .hero__image {
+    width: 50%;
+    margin: 0;
+    max-width: auto;
+  }
+
+  .hero__title {
+    font-size: 3rem;
+  }
+
+  .hero__copy {
+    font-size: 1.8rem;
+  }
+
+  .cta {
+    align-self: flex-start;
+    font-size: 1.8rem;
+  }
+
+  .hero__image {
+    max-width: auto;
+    margin: 0;
+  }
+
+  .hero__arrow {
+    width: 15%;
+  }
+
+  /* styles for the features section */
+
+  .features__wrapper {
+    margin-top: 40px;
+    padding: 120px 0;
+  }
+
+  .features__info, .features__list {
+    max-width: initial;
+  }
+
+  .features__info {
+    max-width: 600px;
+  }
+
+  .features__principal-title {
+    font-size: 3.2rem;
+  }
+
+  .features__copy {
+    margin-top: 20px;
+    font-size: 1.6rem;
+  }
+
+  .features__list {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    align-items: center;
+  }
+
+  .features__list .features__item {
+    margin: 0;
+  }
+
+  .feature__title {
+    font-size: 2.2rem;
+  }
+
+  .feature__description {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+}
