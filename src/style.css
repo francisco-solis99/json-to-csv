@@ -11,6 +11,10 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 @font-face {
   font-family: 'Maven Pro';
   src: url('./assets/fonts/MavenPro.woff2') format('woff2'),
@@ -28,12 +32,11 @@ body {
   width: 100%;
   min-width: 320px;
   min-height: 100vh;
-  padding: 20px;
   position: relative;
 }
 /* styles for header and menu */
 .header {
-  width: 100%;
+  width: 90%;
   margin: 0 auto;
 }
 
@@ -89,7 +92,7 @@ body {
 .menu__item > a {
   padding: 10px;
   text-transform: uppercase;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: var(--color-secondary);
   cursor: pointer;
@@ -121,4 +124,11 @@ body {
 
 .menu__item:hover {
   background-color: #FFF886;
+}
+
+
+/* content styles */
+
+.content {
+  margin-top: 50px;
 }
