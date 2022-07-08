@@ -124,7 +124,7 @@
 .features__copy {
   margin-top: 15px;
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .features__list {
@@ -148,6 +148,11 @@
   font-size: 1.4rem;
 }
 
+.feature__image-wrapper {
+  display: inline-block;
+  box-shadow: 0 0 15px 5px var(--color-secondary);
+}
+
 /* Final wrapper */
 .final-cta__wrapper {
   width: 90%;
@@ -159,6 +164,9 @@
   align-items: center;
 }
 
+.final-cta {
+  font-size: 2rem;
+}
 
 .footer__wrapper {
   display: grid;
