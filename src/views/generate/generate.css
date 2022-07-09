@@ -1,0 +1,102 @@
+.content {
+  margin-top: 30px;
+}
+
+.generate__wrapper {
+  width: 90%;
+  margin: 0 auto;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+
+.generate__place {
+  width: 100%;
+}
+
+.generate__title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+
+.generate__textarea {
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  padding: 10px;
+  border: 1px solid var(--color-secondary-dark);
+}
+
+.generate__button {
+  display: inline-block;
+  width: 30%;
+  padding: 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 2px solid var(--color-secondary-dark);
+  background-color: var(--color-secondary);
+  cursor: pointer;
+}
+
+.footer__wrapper {
+  display: grid;
+  place-content: center;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+}
+
+
+
+@media screen and (min-width: 768px) {
+
+  .content {
+    margin-top: 50px;
+  }
+
+  .generate__wrapper {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 90% 10%;
+    gap: 30px 20px;
+    grid-template-areas: "generetor1 generetor2"
+                         "btn       btn";
+    min-height: 60vh;
+    justify-items: center;
+  }
+
+  .generate__place:nth-child(1) {
+    grid-area: generetor1;
+  }
+
+  .generate__place:nth-child(2) {
+    grid-area: generetor2;
+  }
+
+  .generate__place {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .generate__textarea {
+    height: 100%;
+  }
+
+  .generate__button {
+    grid-area: btn;
+  }
+
+  .footer__text {
+    font-size: 1.4rem;
+  }
+}
