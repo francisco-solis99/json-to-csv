@@ -263,31 +263,31 @@
   }
 
 /* styles for the final cta*/
-.final-cta__wrapper {
-  width: 90%;
-  height: 350px;
-  margin: 0 auto;
-}
+  .final-cta__wrapper {
+    width: 90%;
+    height: 350px;
+    margin: 0 auto;
+  }
 
-.final-cta {
-  font-size: 3.2rem;
-}
+  .final-cta {
+    font-size: 3.2rem;
+  }
 
-.final-cta__wrapper > .cta {
-  align-self: center;
-}
+  .final-cta__wrapper > .cta {
+    align-self: center;
+  }
 
 /*Styles for the Footer */
 
-.footer__wrapper {
-  display: grid;
-  place-content: center;
-  height: 60px;
-  background-color: #fff;
-}
+  .footer__wrapper {
+    display: grid;
+    place-content: center;
+    height: 60px;
+    background-color: #fff;
+  }
 
-.footer__text {
-  font-size: 1.4rem;
-}
+  .footer__text {
+    font-size: 1.4rem;
+  }
 
 }
