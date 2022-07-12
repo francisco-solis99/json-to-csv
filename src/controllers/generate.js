@@ -44,15 +44,11 @@ Generator.prototype = {
   renderOutput(properties, items){
     this.outputPlace.innerHTML = '';
     if(this.outputOption.checked) {
-      // this.csvTextArea.style.display = 'none';
       const table = this.renderTable(properties, items);
       this.outputPlace.appendChild(table);
       return;
     }
 
-    // const lastChild  =  this.outputPlace.lastChild;
-    // if(lastChild.nodeName !== '#text') lastChild.style.display = 'none';
-    // this.csvTextArea.style.display = 'initial';
     this.csvTextArea.textContent = properties.join(',') + '\r\n';
     this.csvTextArea.textContent += items.join('\r\n');
     this.outputPlace.appendChild(this.csvTextArea);
