@@ -17,6 +17,31 @@
   width: 100%;
 }
 
+.generate__options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.generate__label-check {
+  display: inline-flex;
+  padding-right: 10px;
+  white-space: nowrap;
+}
+
+.generate__info-options {
+  font-size: 1.6rem;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.generate__options-input {
+  height: 20px;
+  vertical-align: middle;
+}
+
 .generate__title {
   font-size: 1.8rem;
   margin-bottom: 10px;
@@ -76,8 +101,6 @@
 }
 
 
-
-
 .footer__wrapper {
   display: grid;
   place-content: center;
@@ -88,6 +111,48 @@
   background-color: #fff;
 }
 
+
+/* views in raw data y tables */
+#csv-textarea.inactive {
+  display: none;
+}
+
+.generator__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 1.2rem;
+  font-family: monospace;
+  text-align: center;
+  border: 1px solid var(--color-secondary-dark);
+  background-color: rgba(255, 255, 255, 0.85);
+  overflow: auto;
+  transition: all ease-in 250ms;
+}
+
+.table__header, .table__row{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.table__header {
+  background-color: var(--color-secondary);
+}
+
+.table__row:nth-child(even) {
+  background-color: #d2eec7;
+}
+
+
+.table__cell {
+  padding: 2px;
+  word-wrap: break-word;
+  border: 1px solid var(--color-secondary-dark);
+}
+
+.output {
+  height: 100%;
+}
 
 
 @media screen and (min-width: 768px) {

@@ -5,9 +5,17 @@
     <textarea class="generate__textarea" id="json-textarea" rows="10" cols="20"></textarea>
   </div>
   <button class="generate__button"> <span>Convert</span> </button>
-  <div class="generate__place">
-    <h3 class="generate__title">Here is your Csv:</h3>
-    <textarea class="generate__textarea" id="csv-textarea" readonly rows="10" cols="20"></textarea>
+  <div class="generate__place generate__output">
+    <div class="generate__options">
+      <h3 class="generate__title">Here is your Csv:</h3>
+      <label for="CheckBtn" class="generate__label-check">
+        <span class="generate__info-options">Show in table</span>
+        <input type="checkbox" name="CheckBtn" id="checkBtn" class="generate__options-input">
+      </label>
+    </div>
+    <div class="output">
+      <textarea class="generate__textarea" id="csv-textarea" readonly rows="10" cols="20"></textarea>
+    </div>
   </div>
 </div>
 

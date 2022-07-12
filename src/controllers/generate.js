@@ -15,6 +15,8 @@ export default () => {
 function Generator(htmlContent) {
   this.htmlContent = htmlContent;
   this.btnConverter = htmlContent.querySelector('.generate__button');
+  this.outputOption = htmlContent.querySelector('.generate__options-input');
+  this.outputPlace = htmlContent.querySelector('.output');
   [this.jsonTextArea, this.csvTextArea] = htmlContent.querySelectorAll('.generate__textarea');
 }
 
@@ -35,9 +37,25 @@ Generator.prototype = {
     const jsonList = json.length ? json : [json];
     const [properties, items] = this.generateLists(jsonList);
 
+    this.renderOutput(properties, items);
+    this.outputOption.addEventListener('click', this.renderOutput.bind(this,properties, items));
+  },
+
+  renderOutput(properties, items){
+    this.outputPlace.innerHTML = '';
+    if(this.outputOption.checked) {
+      // this.csvTextArea.style.display = 'none';
+      const table = this.renderTable(properties, items);
+      this.outputPlace.appendChild(table);
+      return;
+    }
+
+    // const lastChild  =  this.outputPlace.lastChild;
+    // if(lastChild.nodeName !== '#text') lastChild.style.display = 'none';
+    // this.csvTextArea.style.display = 'initial';
     this.csvTextArea.textContent = properties.join(',') + '\r\n';
     this.csvTextArea.textContent += items.join('\r\n');
-
+    this.outputPlace.appendChild(this.csvTextArea);
   },
 
   generateLists(jsonList){
@@ -51,7 +69,7 @@ Generator.prototype = {
       const lengthDifference = properties.length - item.length;
       if(!lengthDifference) return item;
       const arr = Array(lengthDifference).fill('');
-      return [item, arr];
+      return [...item, ...arr];
     });
     return [properties, itemsNormalized];
   },
@@ -80,6 +98,46 @@ Generator.prototype = {
         alert('Your Csv information has been copied 🙂');
       })
       .catch((err) => console.log(err));
+  },
+
+
+  renderRows(data){
+    const rows = [];
+    for(let j = 0; j < data.length; j +=1){
+      rows.push(`
+        <div class="table__row">
+          ${this.renderCells(data[j])}
+        </div>
+      `);
+    }
+    return rows.join('');
+  },
+
+  renderCells(data) {
+    const cells = [];
+    for(let i = 0; i < data.length; i+=1){
+      cells.push(`
+        <span class="table__cell">
+          ${data[i]}
+        </span>
+      `);
+    }
+    return cells.join('');
+  },
+
+  renderTable(headerData, contentData){
+    const table = document.createElement('div');
+    table.classList.add('generator__table');
+    table.innerHTML = `
+      <div class="table__header">
+        ${this.renderCells(headerData)}
+      </div>
+
+      <div class="table__content">
+        ${this.renderRows(contentData)}
+      </div>
+    `;
+    return table;
   }
 };
 
