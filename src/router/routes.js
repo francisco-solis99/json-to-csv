@@ -8,5 +8,10 @@ export const routes = {
   generate: {
     path: '/generate',
     template: async () => await (await import('../controllers/generate')).default(),
+  },
+
+  file: {
+    path: '/file',
+    template: async () => await (await import('../controllers/file')).default(),
   }
 };
