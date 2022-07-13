@@ -9,8 +9,11 @@
 .byFile__instructions {
   padding-bottom: 20px;
   padding-top: 20px;
-  border: 3px dotted var(--color-secondary-dark);
+  /* width: 80%; */
+  /* margin: 0 auto; */
+  /* border: 3px dotted var(--color-secondary-dark); */
   border-bottom: 0;
+  background-color: rgb(243, 240, 240);
 }
 
 .byFile__text {
@@ -30,6 +33,11 @@
   background-color: #EDEEA5;
   min-height: 40vh;
 }
+
+/* .full-choose__file.active {
+  background-color: #c8c98a;
+  border: 3px dotted var(--color-secondary-dark);
+} */
 
 .byFile__title {
   font-size: 1.8rem;
@@ -54,6 +62,7 @@
 
 
 .btn__choose {
+  --widthAfter: 0;
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -68,7 +77,40 @@
   background-color: #EDEEA5;
   color: var(--color-secondary-dark);
   transition: all ease-in-out 250ms;
+  position: relative;
+  z-index: 3;
+  transition: all ease-in-out 250ms;
 }
+
+.btn__choose::after {
+  content: '';
+  display: block;
+  position: absolute;
+  background: repeating-linear-gradient(
+      -55deg,
+      #202632,
+      #202632 10px,
+      #333 10px,
+      #333 20px
+  );
+  top: 0;
+  left: 0;
+  width: var(--widthAfter);
+  height: 100%;
+  border-radius: inherit;
+  z-index: -1;
+  transition: all ease-in-out 250ms;
+}
+
+.btn__choose.file__loaded {
+  color: var(--color-secondary);
+  border: 0;
+}
+
+.btn__choose.file__loaded path {
+  fill: var(--color-secondary);
+}
+
 
 .choose__icon {
   display: flex;
@@ -81,6 +123,19 @@
   position: absolute;
   inset: 0;
   z-index: 0;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: grid;
+  place-content: center;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+
+.full-choose__file.active {
+  background-color: #c8c98a;
+  border: 3px dotted var(--color-secondary-dark);
+  opacity: 1;
 }
 
 
