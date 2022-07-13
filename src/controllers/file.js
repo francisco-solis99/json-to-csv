@@ -119,3 +119,8 @@ Conversor.prototype = {
   },
 
 };
+
+
+/* TODO: */
+/* => this coud be better, with another flow to do the uploand and the download
+*/

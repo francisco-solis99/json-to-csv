@@ -9,13 +9,17 @@
 .byFile__instructions {
   padding-bottom: 20px;
   padding-top: 20px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   border-bottom: 0;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(209, 213, 219, 0.3);
 }
 
 .byFile__text {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: center;
 }
 
@@ -29,7 +33,7 @@
   padding-bottom: 20px;
   text-align: center;
   background-color: #EDEEA5;
-  min-height: 70vh;
+  min-height: 77vh;
 }
 
 /* .full-choose__file.active {
@@ -157,8 +161,34 @@
   background-color: #fff;
 }
 
-/* @media screen and (min-width: 948px) {
-} */
+@media screen and (min-width: 768px) {
 
-/* TODO: */
-/* => this coud be better, with another flow to do the uploand and the download */
+  .byFile__instructions {
+    width: 100%;
+    padding: 20px 20%;
+  }
+
+  .byFile__text {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .byFile__title {
+    font-size: 2.2rem;
+    font-weight: bold;
+  }
+
+  .by__file-img-wrapper {
+    width: 25%;
+    margin: 25px auto;
+  }
+
+  .btn__choose {
+    font-size: 1.9rem;
+  }
+
+  .footer__text {
+    font-size: 1.4rem;
+  }
+}
+
