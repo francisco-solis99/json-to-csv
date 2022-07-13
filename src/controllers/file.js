@@ -66,6 +66,7 @@ Conversor.prototype = {
   processFile(file){
     const docType = file.type;
     const btnFile = this.htmlContent.querySelector('.btn__choose');
+    const titleFile = file.name.split('.')[0];
 
     if(docType === 'application/json'){
       const fileReader = new FileReader();
@@ -80,8 +81,7 @@ Conversor.prototype = {
         const [properties, items] = getCsvLists(jsonList);
 
         const csvText = `${properties.join(',')}\r\n${items.join('\r\n')}`;
-        this.buildCsvFile(csvText);
-
+        this.buildCsvFile(csvText, titleFile);
       });
 
       // progress event
@@ -93,8 +93,12 @@ Conversor.prototype = {
             if(progress === 100) {
               clearInterval(intervalId);
               btnFile.classList.add('file__loaded');
+              this.dropArea.style.display = 'none';
+              btnFile.setAttribute('for', '');
+              btnFile.innerHTML = 'Click to convert another file';
+              btnFile.addEventListener('click', () => window.location.reload());
             }
-          }, 500);
+          }, 0);
         }
       });
       return;
@@ -102,8 +106,16 @@ Conversor.prototype = {
     alert('Invalid doctype...');
   },
 
-  buildCsvFile(text){
-    console.log(text);
-  }
+  // build the csv file for it's downloaded
+  buildCsvFile(text, title){
+    const blob = new Blob([text], { type: 'text/csv' });
+
+    const url = window.URL.createObjectURL(blob);
+    const aTag = document.createElement('a');
+    aTag.setAttribute('href', url);
+    aTag.setAttribute('download', `${title}.csv`);
+
+    aTag.click();
+  },
 
 };
