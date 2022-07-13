@@ -1,7 +1,11 @@
 
+
+.content {
+  margin-top: 50px;
+}
+
 /* Style to teh fisrt sectio, the hero */
 .hero__wrapper {
-  /* background-color: red; */
 }
 
 .hero__cta, .hero__image {
