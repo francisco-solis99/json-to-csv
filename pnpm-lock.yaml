@@ -4,7 +4,11 @@ specifiers:
   clean-jsdoc-theme: ^4.1.6
   eslint: ^8.19.0
   jsdoc: ^3.6.10
+  sweetalert2: ^11.4.22
   vite: ^2.9.9
+
+dependencies:
+  sweetalert2: 11.4.22
 
 devDependencies:
   clean-jsdoc-theme: 4.1.6_jsdoc@3.6.10
@@ -1033,6 +1037,10 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
     dev: true
+
+  /sweetalert2/11.4.22:
+    resolution: {integrity: sha512-gDBdi/RrU8/+1IPITQyqx4E5vvXt/VdFfaXa0EevJ2teyY/+yJhUb/EQ/yi07It0XZdl3LebeffWGETXWq5fow==}
+    dev: false
 
   /taffydb/2.6.2:
     resolution: {integrity: sha512-y3JaeRSplks6NYQuCOj3ZFMO3j60rTwbuKCvZxsAraGYH2epusatvZ0baZYA01WsGqJBq/Dl6vOrMUJqyMj8kA==}

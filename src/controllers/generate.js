@@ -1,4 +1,4 @@
-
+import Swal from 'sweetalert2';
 import Generate from '../views/generate/generate.html?raw';
 import '../views/generate/generate.css';
 import getCsvLists from '../utils/getCsvPropsAndItems.js';
@@ -76,12 +76,28 @@ Generator.prototype = /** @lends Generator.prototype */ {
   convertJsonToCsv(){
     const jsonText = this.jsonTextArea.value;
     // convert string into Json
-    const json = JSON.parse(jsonText);
-    const jsonList = json.length ? json : [json];
-    const [properties, items] = getCsvLists(jsonList);
+    try {
+      const json = JSON.parse(jsonText);
+      const jsonList = json.length ? json : [json];
+      const [properties, items] = getCsvLists(jsonList);
+      this.renderOutput(properties, items);
+      this.outputOption.addEventListener('click', this.renderOutput.bind(this,properties, items));
+    } catch(err) {
+      Swal.fire({
+        title: 'Error to convert',
+        text: 'Verify your json text',
+        confirmButtonText: 'Ok',
+        icon: 'error',
+        backdrop: true,
+        width: '50%',
+        padding: '1rem',
+        position: 'center',
+        allowOutsideClick: true,
+        allowEscapeKey: true,
+        confirmButtonAriaLabel: 'Confirmar'
 
-    this.renderOutput(properties, items);
-    this.outputOption.addEventListener('click', this.renderOutput.bind(this,properties, items));
+      });
+    }
   },
 
 
@@ -113,11 +129,33 @@ Generator.prototype = /** @lends Generator.prototype */ {
   */
   copyIntoClipboard(){
     const textToCopy = this.csvTextArea.textContent;
-    if(!textToCopy) return;
+    if(!textToCopy) {
+      Swal.fire({
+        title: 'Nothing to copy',
+        text: 'Verify your json text',
+        icon: 'warning',
+        timer: 2000,
+        toast: true,
+        position: 'top-right',
+
+        showConfirmButton: false,
+
+      });
+      return;
+    }
     navigator.clipboard.writeText(textToCopy)
       .then(() => {
         // librarie to say alerts or say errors
-        alert('Your Csv information has been copied 🙂');
+        Swal.fire({
+          title: 'Your Csv text has been copied',
+          icon: 'success',
+          timer: 3000,
+          toast: true,
+          position: 'top-right',
+
+          showConfirmButton: false,
+
+        });
       })
       .catch((err) => console.log(err));
   },

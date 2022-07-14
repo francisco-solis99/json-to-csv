@@ -61,6 +61,10 @@
   font-family: monospace;
 }
 
+.output .generate__textarea {
+  cursor: copy;
+}
+
 .generate__button {
   display: inline-block;
   width: 30%;

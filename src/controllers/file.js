@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import byFile from '../views/file/file.html?raw';
 import '../views/file/file.css';
 import getCsvLists from '../utils/getCsvPropsAndItems.js';
@@ -202,7 +203,20 @@ Conversor.prototype = /** @lends Conversor.prototype */ {
       return;
     }
     // Is not a valid doctype file
-    alert('Invalid doctype...');
+    Swal.fire({
+      title: 'Error to convert',
+      text: 'Verify your doctype file that you try to upload',
+      confirmButtonText: 'Ok',
+      icon: 'error',
+      backdrop: true,
+      width: '70%',
+      padding: '1rem',
+      position: 'center',
+      allowOutsideClick: true,
+      allowEscapeKey: true,
+      confirmButtonAriaLabel: 'Confirmar'
+
+    });
   },
 
   // build the csv file for it's downloaded
@@ -221,6 +235,16 @@ Conversor.prototype = /** @lends Conversor.prototype */ {
     aTag.setAttribute('download', `${title}.csv`);
 
     aTag.click();
+    Swal.fire({
+      title: 'Your Csv file has been downloaded succesfully',
+      icon: 'success',
+      timer: 3000,
+      toast: true,
+      position: 'top-right',
+
+      showConfirmButton: false,
+
+    });
   },
 
 };
