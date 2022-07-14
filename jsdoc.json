@@ -11,7 +11,17 @@
     "destination": "./docs",
     "template": "node_modules/clean-jsdoc-theme",
     "theme_opts": {
-      "title": "JSON to CSV conversor"
+      "title": "JSON to CSV conversor",
+      "meta" : [
+        {
+          "name": "author",
+          "content": "Francisco Solis"
+        },
+        {
+          "name": "description",
+          "content": "A JSON to CSV converter with HTML, CSS and JavaScript using a vanilla router"
+        }
+      ]
      }
   },
   "template": {
