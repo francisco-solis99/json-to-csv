@@ -1,36 +1,78 @@
+
 import Generate from '../views/generate/generate.html?raw';
 import '../views/generate/generate.css';
 import getCsvLists from '../utils/getCsvPropsAndItems.js';
 
-
+/**
+ * @function utilGenerate
+ * @description Annonymous function to controll and make the logic for the Generate view
+ * @returns {HTMLElement} - HTML template of Generate view
+ */
 export default () => {
   const divWrapper = document.createElement('div');
   divWrapper.innerHTML = Generate;
 
   // logic of this view
+  /**
+  *
+  * @type {Generator}
+  */
   const generator = new Generator(divWrapper);
   generator.init();
   return divWrapper;
 };
 
+/**
+ * Represents the logic of the genarate controller view
+ * @class
+ * @constructor
+ * @param {HTMLElement} htmlContent - The HTML template of the generator view
+ * @example
+ * const generator = new Generator(htmlTemplate);
+ */
 function Generator(htmlContent) {
+  /** @this Generator */
+
+  /** @member {HTMLElement} */
   this.htmlContent = htmlContent;
+  /** @member {HTMLElement} */
   this.btnConverter = htmlContent.querySelector('.generate__button');
+  /** @member {HTMLElement} */
   this.outputOption = htmlContent.querySelector('.generate__options-input');
+  /** @member {HTMLElement} */
   this.outputPlace = htmlContent.querySelector('.output');
+  /** @member {Array<HTMLElement>} */
   [this.jsonTextArea, this.csvTextArea] = htmlContent.querySelectorAll('.generate__textarea');
 }
 
-Generator.prototype = {
+Generator.prototype = /** @lends Generator.prototype */ {
   constructor: Generator,
 
+
+  /**
+   * Init the Generator and add some lsiteners
+   * @return {void}
+   */
   init(){
-    // listener to generate the translation
+    /**
+    * Event to generate the translation of the JSON file into CSV file
+    * @event convertBtn-click
+    */
     this.btnConverter.addEventListener('click', this.convertJsonToCsv.bind(this));
-    // listener to copy the result into the clipboard
+    /**
+    * Event to copy the result of the csv file into the clipboard
+    * @event resultArea-click
+    */
     this.csvTextArea.addEventListener('click', this.copyIntoClipboard.bind(this));
   },
 
+
+  /**
+   * Convert the JSON text into an array of properties and items
+   * @method
+   * @fires convertBtn-click
+   * @return {void}
+   */
   convertJsonToCsv(){
     const jsonText = this.jsonTextArea.value;
     // convert string into Json
@@ -42,6 +84,13 @@ Generator.prototype = {
     this.outputOption.addEventListener('click', this.renderOutput.bind(this,properties, items));
   },
 
+
+  /**
+   * Render the information input in the arrays into a csv format, it coould be in a table way or  just the csv text format
+   * @param {Array<String>} properties List of properties of the json file
+   * @param {Array<String[]>} items  List of the values of each item according to the properties list
+   * @returns {void}
+   */
   renderOutput(properties, items){
     this.outputPlace.innerHTML = '';
     if(this.outputOption.checked) {
@@ -55,6 +104,13 @@ Generator.prototype = {
     this.outputPlace.appendChild(this.csvTextArea);
   },
 
+  /**
+  * Copy into the clipboard the csv text result
+  *
+  * @method
+  * @fires resultArea-click
+  * @return {void}
+  */
   copyIntoClipboard(){
     const textToCopy = this.csvTextArea.textContent;
     if(!textToCopy) return;
@@ -66,7 +122,11 @@ Generator.prototype = {
       .catch((err) => console.log(err));
   },
 
-
+  /**
+   * Render the rows of the table of the csv information
+   * @param {Array<String[]>} data The data of each row
+   * @returns {String} Each row in a HTML div but all in one and single string
+  */
   renderRows(data){
     const rows = [];
     for(let j = 0; j < data.length; j +=1){
@@ -79,6 +139,11 @@ Generator.prototype = {
     return rows.join('');
   },
 
+  /**
+   * Render the cells of the table of the csv information
+   * @param {Array<String>} data The data of each cell
+   * @returns {String} Each cell in a HTML div but all in one and single string
+  */
   renderCells(data) {
     const cells = [];
     for(let i = 0; i < data.length; i+=1){
@@ -91,6 +156,12 @@ Generator.prototype = {
     return cells.join('');
   },
 
+  /**
+   * Render the table of the csv information
+   * @param {Array<String>} headerData The array of teh properties
+   * @param {Array<String[]>} contentData The array of array of the items
+   * @returns {HTMLElement} The table representation of the csv data
+  */
   renderTable(headerData, contentData){
     const table = document.createElement('div');
     table.classList.add('generator__table');

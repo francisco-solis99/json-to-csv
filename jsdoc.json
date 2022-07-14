@@ -8,7 +8,11 @@
   },
   "opts": {
     "recurse": true,
-    "destination": "./docs"
+    "destination": "./docs",
+    "template": "node_modules/clean-jsdoc-theme",
+    "theme_opts": {
+      "title": "JSON to CSV conversor"
+     }
   },
   "template": {
     "cleverLinks": false,

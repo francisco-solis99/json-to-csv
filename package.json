@@ -9,6 +9,7 @@
     "docs": "jsdoc -c jsdoc.json"
   },
   "devDependencies": {
+    "clean-jsdoc-theme": "^4.1.6",
     "eslint": "^8.19.0",
     "jsdoc": "^3.6.10",
     "vite": "^2.9.9"
