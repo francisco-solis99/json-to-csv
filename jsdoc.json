@@ -22,7 +22,8 @@
           "content": "A JSON to CSV converter with HTML, CSS and JavaScript using a vanilla router"
         }
       ]
-     }
+     },
+     "readme": "./README.md"
   },
   "template": {
     "cleverLinks": false,
