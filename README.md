@@ -1,34 +1,34 @@
 # JSON to CSV
 
-## Description
+## Description 👌
 In this project, you can convert your JSON files into CSV files by typing the text of the JSON or uploading the JSON file to download the final CSV file.
 
 For the router, it was made with Vanilla JavaScript using dynamic imports and using the MVC model a little bit.
 
 The application has a desktop view and the mobile view, it's responsive
 
-## Demo
+## Demo 😀
 Here is the demo
 
-## Documentation
+## Documentation 📄
 Here is the documentation
 
-## Design
+## Design 🍭
 - Figma
 
-## Technologies
+## Technologies 💻
 - HTML
 - CSS
 - JavaScript
 
-## Libraries
+## Libraries 📔
 - SweetAlert2
 - AOS
 
-## Bundler
+## Bundler 🏗
 - Vite
 
-## Tool for doing the documentation
+## Tool for doing the documentation ⛏⚙
 - JSDOC
 
 
