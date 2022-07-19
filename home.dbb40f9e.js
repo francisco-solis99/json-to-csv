@@ -57,4 +57,4 @@ var t=`
 <footer class="footer__wrapper">
   <p class="footer__text">Made with \u{1F9E1} by Francisco Solis</p>
 </footer>
-`;var r="/json.ec6c8355.svg",i="/csv.7eba2ef8.svg",a="/keyboard.7e9b6389.svg",n=()=>{const e=document.createElement("div");return e.innerHTML=t,e.querySelector(".hero__img").src=r,e.querySelector(".csv__img").src=i,e.querySelector(".keyboard__img").src=a,e.querySelector(".download__img").src=a,e};export{n as default};
+`;var r="/json-to-csv/json.ec6c8355.svg",i="/json-to-csv/csv.7eba2ef8.svg",a="/json-to-csv/keyboard.7e9b6389.svg",n=()=>{const e=document.createElement("div");return e.innerHTML=t,e.querySelector(".hero__img").src=r,e.querySelector(".csv__img").src=i,e.querySelector(".keyboard__img").src=a,e.querySelector(".download__img").src=a,e};export{n as default};

@@ -1,4 +1,4 @@
-import{g as s,S as n}from"./getCsvPropsAndItems.3b86e880.js";import"./index.b25a7c28.js";var l=`
+import{g as s,S as n}from"./getCsvPropsAndItems.6dc75a74.js";import"./index.c36a68f4.js";var l=`
 <div class="generate__wrapper">
   <div class="generate__place" data-aos="fade-down">
     <h3 class="generate__title">Type or paste your Json:</h3>
