@@ -1,4 +1,4 @@
-var a=`
+var t=`
 <section class="hero__wrapper" data-aos="fade-up">
   <div class="hero__cta">
     <h1 class="hero__title">Translate as a thunder \u26A1</h1>
@@ -30,7 +30,7 @@ var a=`
   <div class="features__list">
     <article class="features__item" data-aos="zoom-in-up">
       <figure class="feature__image-wrapper">
-        <img class="feature__image" src="../../assets/images/keyboard.svg" alt="keyboard feature 1">
+        <img class="feature__image keyboard__img" src="" alt="Keyboard feature 1">
       </figure>
       <h3 class="feature__title">By Typing</h3>
       <p class="feature__description">
@@ -39,7 +39,7 @@ var a=`
     </article>
     <article class="features__item" data-aos="zoom-in-up">
       <figure class="feature__image-wrapper">
-        <img class="feature__image" src="../../assets/images/drop.svg" alt="Drop feature 2">
+        <img class="feature__image download__img" src="" alt="Drop feature 2">
       </figure>
       <h3 class="feature__title">Drag and Drop</h3>
       <p class="feature__description">
@@ -54,7 +54,7 @@ var a=`
   <a href="/generate" class="cta" data-aos="fade-up">Get Started</a>
 </section>
 
-<footer class="footer__wrapper" data-aos="fade-down" data-aos-duration="1000">
+<footer class="footer__wrapper">
   <p class="footer__text">Made with \u{1F9E1} by Francisco Solis</p>
 </footer>
-`;var t="/json.ec6c8355.svg",r="/csv.7eba2ef8.svg",i=()=>{const e=document.createElement("div");return e.innerHTML=a,e.querySelector(".hero__img").src=t,e.querySelector(".csv__img").src=r,e};export{i as default};
+`;var r="/json.ec6c8355.svg",i="/csv.7eba2ef8.svg",a="/keyboard.7e9b6389.svg",n=()=>{const e=document.createElement("div");return e.innerHTML=t,e.querySelector(".hero__img").src=r,e.querySelector(".csv__img").src=i,e.querySelector(".keyboard__img").src=a,e.querySelector(".download__img").src=a,e};export{n as default};
