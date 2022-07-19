@@ -1,4 +1,4 @@
-import{g as s,S as n}from"./getCsvPropsAndItems.02141aca.js";import"./index.1450c6b2.js";var l=`
+import{g as s,S as n}from"./getCsvPropsAndItems.3f198dfb.js";import"./index.bcf55c05.js";var l=`
 <div class="generate__wrapper">
   <div class="generate__place" data-aos="fade-down">
     <h3 class="generate__title">Type or paste your Json:</h3>
@@ -19,7 +19,7 @@ import{g as s,S as n}from"./getCsvPropsAndItems.02141aca.js";import"./index.1450
   </div>
 </div>
 
-<footer class="footer__wrapper" data-aos="fade-up">
+<footer class="footer__wrapper">
   <p class="footer__text">Made with \u{1F9E1} by Francisco Solis</p>
 </footer>
 `;var p=()=>{const e=document.createElement("div");return e.innerHTML=l,new o(e).init(),e};function o(e){this.htmlContent=e,this.btnConverter=e.querySelector(".generate__button"),this.outputOption=e.querySelector(".generate__options-input"),this.outputPlace=e.querySelector(".output"),[this.jsonTextArea,this.csvTextArea]=e.querySelectorAll(".generate__textarea")}o.prototype={constructor:o,init(){this.btnConverter.addEventListener("click",this.convertJsonToCsv.bind(this)),this.csvTextArea.addEventListener("click",this.copyIntoClipboard.bind(this))},convertJsonToCsv(){const e=this.jsonTextArea.value;try{const t=JSON.parse(e),r=t.length?t:[t],[a,i]=s(r);this.renderOutput(a,i),this.outputOption.addEventListener("click",this.renderOutput.bind(this,a,i))}catch{n.fire({title:"Error to convert",text:"Verify your json text",confirmButtonText:"Ok",icon:"error",backdrop:!0,width:"50%",padding:"1rem",position:"center",allowOutsideClick:!0,allowEscapeKey:!0,confirmButtonAriaLabel:"Confirmar"})}},renderOutput(e,t){if(this.outputPlace.innerHTML="",this.outputOption.checked){const r=this.renderTable(e,t);this.outputPlace.appendChild(r);return}this.csvTextArea.textContent=e.join(",")+`\r
