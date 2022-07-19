@@ -1,4 +1,4 @@
-import{g as _,S as d}from"./getCsvPropsAndItems.c7fdba34.js";import"./index.d0c866b0.js";var u=`
+import{g as _,S as d}from"./getCsvPropsAndItems.6dd1f5ab.js";import"./index.9496cf9a.js";var u=`
 
 <div class="byfile__wrapper">
   <div class="byFile__instructions" data-aos="fade-right">
