@@ -9,11 +9,11 @@ var a=`
   </div>
   <div class="hero__image">
     <figure class="hero__img-wrapper">
-      <img class="hero__img" src="../../assets/images/json.SVG" alt="JSON file">
+      <img class="hero__img" src="" alt="JSON file">
     </figure>
     <img src="../../assets/icons/arrowVec.svg" alt="" class="hero__arrow">
     <figure class="hero__img-wrapper">
-      <img class="hero__img" src="../../assets/images/csv.svg" alt="">
+      <img class="hero__img csv__img" src="" alt="CSV file">
     </figure>
   </div>
 </section>
@@ -57,4 +57,4 @@ var a=`
 <footer class="footer__wrapper" data-aos="fade-down" data-aos-duration="1000">
   <p class="footer__text">Made with \u{1F9E1} by Francisco Solis</p>
 </footer>
-`;var t=()=>{const e=document.createElement("div");return e.innerHTML=a,e};export{t as default};
+`;var t="/json.ec6c8355.svg",r="/csv.7eba2ef8.svg",i=()=>{const e=document.createElement("div");return e.innerHTML=a,e.querySelector(".hero__img").src=t,e.querySelector(".csv__img").src=r,e};export{i as default};
