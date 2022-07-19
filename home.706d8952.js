@@ -9,7 +9,7 @@ var a=`
   </div>
   <div class="hero__image">
     <figure class="hero__img-wrapper">
-      <img class="hero__img" src="../../assets/images/json.svg" alt="JSON file">
+      <img class="hero__img" src="../../assets/images/json.SVG" alt="JSON file">
     </figure>
     <img src="../../assets/icons/arrowVec.svg" alt="" class="hero__arrow">
     <figure class="hero__img-wrapper">
