@@ -55,4 +55,5 @@ menuBtn.addEventListener('click',
 */
 () => menu.classList.toggle('active'));
 
-
+// when hash changes, load the correct view (with hash because github pages doesn't support dynamic routes) this is better in the branch main
+window.addEventListener('hashchange', () => myRouter.init());

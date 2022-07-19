@@ -6,7 +6,7 @@
  * @example
  * const myRouter = new Router(routes);
  */
-function Router(routes = {}){
+ function Router(routes = {}){
   this.routes = routes;
 }
 
@@ -19,10 +19,8 @@ Router.prototype = /** @lends Router.prototype */ {
    */
   init(){
     this.rootContent = document.querySelector('.content');
-    const initialpathName =  window.location.pathname;
-    const pathRouteArray =  initialpathName.slice(1).split('/');
-    const pathName = initialpathName === '/' || initialpathName === '/json-to-csv/' ? 'home' : pathRouteArray[pathRouteArray.length - 1];
-    console.log(pathName);
+    const initialpathName =  window.location.hash;
+    const pathName = initialpathName === '#/' || initialpathName === '' ? 'home' : initialpathName.slice(2);
     this.loadRoute(pathName);
   },
 
@@ -35,7 +33,7 @@ Router.prototype = /** @lends Router.prototype */ {
   async loadRoute(pathName = 'home'){
     console.log(pathName);
     const {path, template} = this.routes[pathName];
-    window.history.pushState({},'', path);
+    window.history.pushState({}, '', path);
     this.rootContent.innerHTML = '';
     const html = await template();
     this.rootContent.appendChild(html);

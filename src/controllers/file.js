@@ -2,7 +2,7 @@ import Swal from 'sweetalert2';
 import byFile from '../views/file/file.html?raw';
 import '../views/file/file.css';
 import getCsvLists from '../utils/getCsvPropsAndItems.js';
-
+import jsonFormatImg from '../assets/images/json_format.svg';
 /**
  * @function utilByFile
  * @description Annonymous function to controll and make the logic for the by file view
@@ -11,6 +11,8 @@ import getCsvLists from '../utils/getCsvPropsAndItems.js';
 export default () => {
   const divWrapper = document.createElement('div');
   divWrapper.innerHTML = byFile;
+  // load the images
+  divWrapper.querySelector('.by__file-image').src = jsonFormatImg;
 
   const conversor = new Conversor(divWrapper);
   conversor.init();

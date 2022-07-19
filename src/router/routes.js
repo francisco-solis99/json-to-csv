@@ -18,7 +18,7 @@ export const routes = {
    * @type {route}
    */
   home: {
-    path: '/',
+    path: '#/',
     template: async () => await (await import('../controllers/home')).default(),
   },
 
@@ -26,7 +26,7 @@ export const routes = {
    * @type {route}
   */
   generate: {
-    path: '/generate',
+    path: '#/generate',
     template: async () => await (await import('../controllers/generate')).default(),
   },
 
@@ -34,7 +34,7 @@ export const routes = {
    * @type {route}
   */
   file: {
-    path: '/file',
+    path: '#/file',
     template: async () => await (await import('../controllers/file')).default(),
   }
 };
