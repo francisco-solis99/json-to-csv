@@ -6,6 +6,7 @@
 import Router from "./router/router.js";
 import {routes}  from './router/routes.js';
 
+
 // AOS librarie
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles

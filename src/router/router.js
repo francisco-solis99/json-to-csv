@@ -20,7 +20,8 @@ Router.prototype = /** @lends Router.prototype */ {
   init(){
     this.rootContent = document.querySelector('.content');
     const initialpathName =  window.location.pathname;
-    const pathName = initialpathName === '/' ? 'home' : initialpathName.slice(1);
+    const pathName = initialpathName === '/' || initialpathName === '/json-to-csv/' ? 'home' : initialpathName.slice(1);
+    console.log(pathName);
     this.loadRoute(pathName);
   },
 
@@ -31,6 +32,7 @@ Router.prototype = /** @lends Router.prototype */ {
    * @return {void}
    */
   async loadRoute(pathName = 'home'){
+    console.log(pathName);
     const {path, template} = this.routes[pathName];
     window.history.pushState({},'', path);
     this.rootContent.innerHTML = '';
