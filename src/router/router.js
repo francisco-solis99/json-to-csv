@@ -20,7 +20,8 @@ Router.prototype = /** @lends Router.prototype */ {
   init(){
     this.rootContent = document.querySelector('.content');
     const initialpathName =  window.location.pathname;
-    const pathName = initialpathName === '/' || initialpathName === '/json-to-csv/' ? 'home' : initialpathName.slice(1);
+    const pathRouteArray =  initialpathName.slice(1).split('/');
+    const pathName = initialpathName === '/' || initialpathName === '/json-to-csv/' ? 'home' : pathRouteArray[pathRouteArray.length - 1];
     console.log(pathName);
     this.loadRoute(pathName);
   },

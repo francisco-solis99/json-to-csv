@@ -5,6 +5,7 @@ import jsonImg from '../assets/images/json.svg';
 import csvImg from '../assets/images/csv.svg'; // data:image/png;base64,...
 import keyboardImg from '../assets/images/keyboard.svg';
 import dropImg from '../assets/images/keyboard.svg';
+import arrowImg from '../assets/icons/arrowVec.svg';
 
 
 /**
@@ -22,6 +23,7 @@ export default () => {
   divWrapper.querySelector('.csv__img').src =  csvImg;
   divWrapper.querySelector('.keyboard__img').src =  keyboardImg;
   divWrapper.querySelector('.download__img').src =  dropImg;
+  divWrapper.querySelector('.hero__arrow').src =  arrowImg;
 
 
   // logic of this view
