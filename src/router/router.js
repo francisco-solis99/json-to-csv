@@ -8,7 +8,6 @@
  */
 function Router(routes = {}){
   this.routes = routes;
-  this.init();
 }
 
 Router.prototype = /** @lends Router.prototype */ {

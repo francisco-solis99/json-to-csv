@@ -21,8 +21,7 @@ AOS.init({
  * @type {Router}
  */
 const myRouter = new Router(routes);
-console.log(myRouter);
-
+myRouter.init();
 
 // toggle the menu
 
